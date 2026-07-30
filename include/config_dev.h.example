@@ -1,0 +1,29 @@
+#pragma once
+
+// TEMPLATE -- copy this file to config_dev.h and fill in real values:
+//
+//     copy include\config_dev.h.example include\config_dev.h     (cmd)
+//     cp include/config_dev.h.example include/config_dev.h       (bash)
+//
+// config_dev.h is gitignored because it holds credentials. This template is
+// committed, so keep the two in sync when you add a setting -- config.h fails
+// the build if any required macro below is missing.
+
+#define WIFI_SSID          "your-2.4GHz-ssid"
+#define WIFI_PASSWORD      "your-wifi-password"
+
+#define WIFI_CONNECT_TIMEOUT_MS 15000        // give up an attempt, report why, retry
+
+#define MQTT_BROKER        "192.168.1.100"   // IP of the machine running the broker
+#define MQTT_PORT          1883
+#define MQTT_RETRY_MS      2000
+
+#define DEVICE_ID          "hp80-dev-01"     // must be unique per board on the broker
+#define TOPIC_PREFIX       "septic/hp80"
+
+// Detection settings (tune on real HP-80)
+#define SPREAD_THRESHOLD   110
+#define SAMPLE_MS          200
+#define PUBLISH_MS         1000              // fast loop while iterating
+
+#define LOG_VERBOSE        1
